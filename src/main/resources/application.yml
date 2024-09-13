@@ -10,7 +10,7 @@ spring:
   jpa:
     open-in-view : false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
@@ -19,3 +19,5 @@ spring:
 logging:
   level:
     org.hibernate: INFO
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.stat: DEBUG
