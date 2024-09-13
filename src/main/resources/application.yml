@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: shopping-list-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+    username: postgres
+    password: postgres
+  jpa:
+    open-in-view : false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate: INFO
