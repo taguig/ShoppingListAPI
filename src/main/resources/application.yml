@@ -1,16 +1,19 @@
 spring:
-  profiles:
-    active: local
+  output:
+    ansi:
+      enabled: ALWAYS
   application:
     name: shopping-list-api
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
-    username: postgres
-    password: postgres
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
   jpa:
     open-in-view : false
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -21,3 +24,6 @@ logging:
     org.hibernate: INFO
     org.hibernate.orm.jdbc.bind: TRACE
     org.hibernate.stat: DEBUG
+
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2
