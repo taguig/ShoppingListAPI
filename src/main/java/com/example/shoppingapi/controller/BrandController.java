@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-
 @RequestMapping(path = "/brand")
 public class BrandController {
 
@@ -33,7 +32,7 @@ public class BrandController {
 
     }
 
-    @GetMapping("")
+    @GetMapping()
     public List<Brand> getBrands() {
         return brandRepository.findAll();
     }
@@ -53,6 +52,7 @@ public class BrandController {
 
     }
 
+    // ajouter les state par tout
     @PutMapping("/{id}")
     public ResponseEntity<Brand> putMethodName(@PathVariable long id, @RequestBody Brand entity) {
         // TODO: process PUT request
